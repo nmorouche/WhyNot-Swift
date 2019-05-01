@@ -11,20 +11,20 @@ import UIKit
 
 class EventListTableViewController: UITableViewController {
     var events: [Event]!
-    @IBOutlet var EventTableView: UITableView!
+    @IBOutlet var eventTableView: UITableView!
     
     class func newInstance(events: [Event]) -> EventListTableViewController{
-        let mlvc = EventListTableViewController()
-        mlvc.events = events
-        return mlvc
+        let eltvc = EventListTableViewController()
+        eltvc.events = events
+        return eltvc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         super.viewDidLoad()
-        self.EventTableView.delegate = self
-        self.EventTableView.dataSource = self
-        self.EventTableView.register(UINib(nibName: "EventListTableViewCell", bundle: nil), forCellReuseIdentifier: EventListTableViewController.eventCellId)
+        self.eventTableView.delegate = self
+        self.eventTableView.dataSource = self
+        self.eventTableView.register(UINib(nibName: "EventListTableViewCell", bundle: nil), forCellReuseIdentifier: EventListTableViewController.eventCellId)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(add))
         
 
@@ -35,9 +35,8 @@ class EventListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     @objc func add(){
-                let add = AddEventViewController.newInstance()
-                self.navigationController?.pushViewController(add, animated: true)
-
+        let add = AddEventViewController.newInstance()
+        self.navigationController?.pushViewController(add, animated: true)
     }
 
     public static let eventCellId = "EVENT_CELL_ID"
@@ -55,23 +54,18 @@ class EventListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = EventTableView.dequeueReusableCell(withIdentifier: EventListTableViewController.eventCellId, for: indexPath) as! EventListTableViewCell
+        let cell = eventTableView.dequeueReusableCell(withIdentifier: EventListTableViewController.eventCellId, for: indexPath) as! EventListTableViewCell
         let event = self.events[indexPath.row]
         cell.NameLabel.text = event.name
-        cell.NameLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
+        cell.NameLabel.textColor = UIColor.white
         
-        cell.LocationLabel.text =  event.adress
-        cell.LocationLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
+        cell.LocationLabel.text =  event.address
+        cell.LocationLabel.textColor = UIColor.white
         
-        
-        let date = event.date
-        let eventDate = date.toString(dateFormat: "YYYY-MM-dd")
-        cell.DateLabel.text = eventDate
-        cell.DateLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
-        
-        var url: String=""
-        url.append(event.image)
-        let imageURL = URL(string: url)
+        cell.DateLabel.text = event.date
+        cell.DateLabel.textColor = UIColor.white
+
+        let imageURL = URL(string: event.imageURL)
         let imageData = try! Data(contentsOf: imageURL!)
         cell.ImageView.image = UIImage(data: imageData)
         

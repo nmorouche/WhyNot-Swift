@@ -10,27 +10,31 @@ import Foundation
 
 public struct Event {
     var name: String
-    var date: Date
+    var date: String
     var description: String
-    var adress: String
-    var image: String
+    var address: String
+    var imageURL: String
     
     init?(json: [String: Any]) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         guard let name = json["name"] as? String,
-            let d = json["date"] as? String,
-            let date = dateFormatter.date(from: d),
-            let description = json["desc"] as? String,
-            let adress = json["adress"] as? String,
-            let image = json["image"] as? String else {
-                return nil
-        }
+            let date = json["date"] as? String,
+            let description = json["description"] as? String,
+            let address = json["adress"] as? String,
+            let imageURL = json["image"] as? String else { return nil }
         self.name = name
         self.date = date
         self.description = description
-        self.adress = adress
-        self.image = image
-        
+        self.address = address
+        self.imageURL = imageURL
+    }
+    
+    init(name: String,date: String,description: String,address: String,imageURL: String) {
+        self.name = name
+        self.date = date
+        self.description = description
+        self.address = address
+        self.imageURL = imageURL
     }
 }
