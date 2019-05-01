@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tab: [Event]!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        EventService.default.getEvents(completion: { (i) in
+            let homepageViewController = EventListTableViewController.newInstance(events: i)
+            let navigationController = UINavigationController(rootViewController: homepageViewController)
+            let w = UIWindow(frame: UIScreen.main.bounds)
+            w.rootViewController = navigationController
+            w.makeKeyAndVisible()
+            self.window = w
+        })
         return true
     }
 

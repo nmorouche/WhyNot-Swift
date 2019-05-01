@@ -10,29 +10,28 @@ import UIKit
 
 class AddEventViewController: UIViewController {
 
-    @IBOutlet var NameLabel: UITextField!
-    
-    @IBOutlet var DescEvent: UITextView!
-    @IBOutlet var AdressLabel: UITextField!
-    @IBOutlet var DatePicker: UIDatePicker!
-    @IBOutlet var ImageLabel: UITextField!
+    @IBOutlet var nameTF: UITextField!
+    @IBOutlet var descriptionTV: UITextView!
+    @IBOutlet var addressTF: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var imageTF: UITextField!
     
     @IBAction func BtnCreate(_ sender: Any) {
-        EventService.default.createEvent(name: NameLabel.text!, date: DatePicker.dates!, description: DescEvent.text!, adress: AdressLabel.text!, image: ImageLabel.text!) { (success) in
-            if(success == 1){
+        EventService.default.createEvent(name: nameTF.text!, date: datePicker.date.toString(dateFormat: "YYYY-MM-dd"), description: descriptionTV.text!, address: addressTF.text!, imageURL: imageTF.text!) { (success) in
+            if(success){
                 let add = AddEventViewController.newInstance()
                 self.navigationController?.pushViewController(add, animated: true)
             }
         }
     }
-    class func newInstance() -> AddEventViewController{
-        let home = AddEventViewController( )
+    
+    class func newInstance() -> AddEventViewController {
+        let home = AddEventViewController()
         return home
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
