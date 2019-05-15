@@ -13,19 +13,17 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var tab: [Event]!
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        EventService.default.getEvents(completion: { (i) in
-            let homepageViewController = EventListTableViewController.newInstance(events: i)
-            let navigationController = UINavigationController(rootViewController: homepageViewController)
-            let w = UIWindow(frame: UIScreen.main.bounds)
-            w.rootViewController = navigationController
-            w.makeKeyAndVisible()
-            self.window = w
-        })
+        let homeViewController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        
+        let w = UIWindow(frame: UIScreen.main.bounds)
+        w.rootViewController = navigationController
+        w.makeKeyAndVisible()
+        self.window = w
+        
         return true
     }
 

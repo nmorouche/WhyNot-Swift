@@ -2,13 +2,14 @@
 //  Event.swift
 //  WhyNot-Swift
 //
-//  Created by Arthur BLANC on 20/04/2019.
+//  Created by Nassim Morouche on 15/05/2019.
 //  Copyright © 2019 Nassim Morouche. All rights reserved.
 //
 
 import Foundation
 
 public struct Event {
+    
     var name: String
     var date: String
     var description: String
@@ -30,7 +31,7 @@ public struct Event {
         self.imageURL = imageURL
     }
     
-    init(name: String,date: String,description: String,address: String,imageURL: String) {
+    init(name: String, date: String, description: String, address: String, imageURL: String) {
         self.name = name
         self.date = date
         self.description = description
