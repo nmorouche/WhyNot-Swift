@@ -8,3 +8,4 @@
 
 "HomeViewController.goToEventList.title" = "Event";
 "HomeViewController.goToReportList.title" = "Report";
+"HomeViewController.goToEventList.loading" = "Loading...";

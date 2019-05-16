@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class HomeViewController: UIViewController {
     
@@ -20,7 +21,9 @@ class HomeViewController: UIViewController {
 
     @IBAction func goToEventList(_ sender: Any) {
         self.goToEventList.isEnabled = false
+        firstAnimation()
         EventService.default.getEvents { (events) in
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
             self.goToEventList.isEnabled = true
             let push = EventListViewController.newInstance(events: events)
             self.navigationController?.pushViewController(push, animated: true)
@@ -41,4 +44,12 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+extension HomeViewController : NVActivityIndicatorViewable {
+    
+    func firstAnimation() {
+        let size = CGSize(width: 30, height: 30)
+        startAnimating(size, message: NSLocalizedString("HomeViewController.goToEventList.loading", comment: ""), type: .circleStrokeSpin, color: UIColor.blue, textColor: UIColor.purple, fadeInAnimation: nil)
+    }
 }
