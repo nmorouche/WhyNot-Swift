@@ -9,17 +9,28 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    @IBOutlet var goToEventList: UIButton!
+    @IBOutlet var goToReportList: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        goToEventList.setTitle(NSLocalizedString("HomeViewController.goToEventList.title", comment: ""), for: .normal)
+        goToReportList.setTitle(NSLocalizedString("HomeViewController.goToReportList.title", comment: ""), for: .normal)
+    }
+
+    @IBAction func goToEventList(_ sender: Any) {
+        self.goToEventList.isEnabled = false
         EventService.default.getEvents { (events) in
+            self.goToEventList.isEnabled = true
             let push = EventListViewController.newInstance(events: events)
             self.navigationController?.pushViewController(push, animated: true)
         }
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func goToReportList(_ sender: Any) {
+        print("goToReportList")
+    }
+    
     /*
     // MARK: - Navigation
 
