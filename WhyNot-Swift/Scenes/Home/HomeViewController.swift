@@ -20,11 +20,9 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func goToEventList(_ sender: Any) {
-        self.goToEventList.isEnabled = false
         firstAnimation()
         EventService.default.getEvents { (events) in
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
-            self.goToEventList.isEnabled = true
             let push = EventListViewController.newInstance(events: events)
             self.navigationController?.pushViewController(push, animated: true)
         }
@@ -50,6 +48,6 @@ extension HomeViewController : NVActivityIndicatorViewable {
     
     func firstAnimation() {
         let size = CGSize(width: 30, height: 30)
-        startAnimating(size, message: NSLocalizedString("HomeViewController.goToEventList.loading", comment: ""), type: .circleStrokeSpin, color: UIColor.blue, textColor: UIColor.purple, fadeInAnimation: nil)
+        startAnimating(size, message: NSLocalizedString("HomeViewController.goToEventList.loading", comment: ""), type: .circleStrokeSpin, color: UIColor.blue, backgroundColor: UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.9), textColor: UIColor.red, fadeInAnimation: nil)
     }
 }
