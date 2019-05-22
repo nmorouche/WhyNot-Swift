@@ -77,5 +77,12 @@ extension EventListViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //EventService.default.getEvent() { (event) in
+            let detail = EventDetailViewController.newInstance(event: events[indexPath.row])
+            self.navigationController?.pushViewController(detail, animated: true)
+        //}
+    }
+    
     
 }

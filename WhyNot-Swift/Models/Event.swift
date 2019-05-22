@@ -9,7 +9,6 @@
 import Foundation
 
 public struct Event {
-    
     var name: String
     var date: String
     var description: String
