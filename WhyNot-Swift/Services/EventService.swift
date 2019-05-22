@@ -25,4 +25,12 @@ public class EventService {
             completion(events)
         }
     }
+    
+    public func getEvent(completion: @escaping (Event) -> Void) {
+        Alamofire.request("https://demo6576625.mockable.io/events").responseJSON { (res) in
+            guard let event = res.result.value as? [String:Any] else {return}
+            let singleEvent = Event(name: event["name"] as! String, date: event["date"] as! String, description: event["desctiption"] as! String, address: event["adresse"] as! String, imageURL: event["image"] as! String)
+            completion(singleEvent)
+        }
+    }
 }
