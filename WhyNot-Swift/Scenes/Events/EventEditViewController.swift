@@ -45,11 +45,15 @@ class EventEditViewController: UIViewController {
     }
     
     @IBAction func editEvent(_ sender: Any) {
-        print(self.titleTextField.text!)
-        print(self.descriptionTextView.text!)
-        print(self.adressTextField.text!)
-        print(dateFormat(date: self.datePicker.date))
-        print(self.imageTextField.text!)
+        //EventService.default.editEvent(title: self.titleTextField.text!, date: dateFormat(date: self.datePicker.date), adress: self.adressTextField.text!, image: self.imageTextField.text!, //description: self.descriptionTextView.text!) { (code) in
+            //if (code == "200"){
+                EventService.default.getEvents(completion: { (event) in
+                    let list = EventListViewController.newInstance(events: event)
+                    self.navigationController?.pushViewController(list, animated: true)
+                })
+                
+            //}
+       // }
     }
     
     

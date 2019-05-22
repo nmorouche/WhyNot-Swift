@@ -40,11 +40,15 @@ class InsertEventViewController: UIViewController {
     }
     
     @IBAction func createEvent(_ sender: Any) {
-        print(self.titleTextField.text!)
-        print(self.descriptionTextView.text!)
-        print(self.addressTextField.text!)
-        print(dateFormat(date: self.datePicker.date))
-        print(self.imageTextField.text!)
+        //EventService.default.insertEvent(title: self.titleTextField.text!, date: dateFormat(date: self.datePicker.date), adress: self.adressTextField.text!, image: self.imageTextField.text!, //description: self.descriptionTextView.text!) { (code) in
+        //if (code == "200"){
+        EventService.default.getEvents(completion: { (event) in
+            let list = EventListViewController.newInstance(events: event)
+            self.navigationController?.pushViewController(list, animated: true)
+        })
+        
+        //}
+        // }
     }
     
     /*
