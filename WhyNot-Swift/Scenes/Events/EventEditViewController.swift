@@ -17,15 +17,16 @@ class EventEditViewController: UIViewController {
     @IBOutlet var adressTextField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var imageTextField: UITextField!
-    public var event: Event!
+    var event: Event!
+    
     public class func newInstance(event: Event) -> EventEditViewController {
-        let elvc = EventDetailViewController()
-        elvc.event = event
-        return EventEditViewController()
+        let eevc = EventEditViewController()
+        eevc.event = event
+        return eevc
     }
     
     override func viewDidLoad() {
-        print("loooool"+event.name)
+        print("loooool :", self.event!)
         self.titleTextField.text = self.event.name
         self.descriptionTextView.text = self.event.description
         self.adressTextField.text = self.event.address
@@ -49,7 +50,6 @@ class EventEditViewController: UIViewController {
         print(self.adressTextField.text!)
         print(dateFormat(date: self.datePicker.date))
         print(self.imageTextField.text!)
-
     }
     
     

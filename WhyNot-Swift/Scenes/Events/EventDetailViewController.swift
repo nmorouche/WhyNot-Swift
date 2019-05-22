@@ -15,8 +15,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var adressLabel: UILabel!
     @IBOutlet var descriptionField: UITextView!
-    
-    public var event: Event!
+    var event: Event!
     
     class func newInstance(event: Event) -> EventDetailViewController{
         let elvc = EventDetailViewController()
@@ -25,7 +24,14 @@ class EventDetailViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        print(self.event.name,self.event.date,self.event.address,self.nameLabel.text)
+        super.viewDidLoad()
+        displayData()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(touchEdit))
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func displayData(){
         let imageURL = URL(string: event.imageURL)
         let imageData = try! Data(contentsOf: imageURL!)
         self.imageView.image = UIImage(data: imageData)
@@ -33,17 +39,11 @@ class EventDetailViewController: UIViewController {
         self.dateLabel.text = self.event.date
         self.adressLabel.text = self.event.address
         self.descriptionField.text = self.event.description
-        super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(touchEdit))
-
-        // Do any additional setup after loading the view.
     }
     
     @objc func touchEdit() {
-        print(self.event)
-        guard let oneEvent = self.event else{ return}
-        print(oneEvent)
-        let insert = EventEditViewController.newInstance(event: oneEvent)
+        print("EVENTUUUUUUU :", self.event!)
+        let insert = EventEditViewController.newInstance(event: self.event!)
         self.navigationController?.pushViewController(insert, animated: true)
     }
 
