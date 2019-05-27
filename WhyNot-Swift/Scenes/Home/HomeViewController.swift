@@ -13,7 +13,16 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var goToEventList: UIButton!
     @IBOutlet var goToReportList: UIButton!
+    @IBOutlet var reportButton: UIButton!
+    @IBOutlet var eventButton: UIButton!
     override func viewDidLoad() {
+        eventButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        eventButton.layer.cornerRadius = 0.5 * eventButton.bounds.size.width
+        eventButton.clipsToBounds = true
+        
+        reportButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        reportButton.layer.cornerRadius = 0.5 * reportButton.bounds.size.width
+        reportButton.clipsToBounds = true
         super.viewDidLoad()
         goToEventList.setTitle(NSLocalizedString("HomeViewController.goToEventList.title", comment: ""), for: .normal)
         goToReportList.setTitle(NSLocalizedString("HomeViewController.goToReportList.title", comment: ""), for: .normal)
@@ -56,6 +65,7 @@ extension HomeViewController : NVActivityIndicatorViewable {
     
     func firstAnimation() {
         let size = CGSize(width: 30, height: 30)
-        startAnimating(size, message: NSLocalizedString("HomeViewController.goToEventList.loading", comment: ""), type: .circleStrokeSpin, color: UIColor.blue, backgroundColor: UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.9), textColor: UIColor.red, fadeInAnimation: nil)
+        startAnimating(size, message: NSLocalizedString("HomeViewController.goToEventList.loading", comment: ""), type: .circleStrokeSpin, color: UIColor.blue, backgroundColor:
+            UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.9), textColor: UIColor(red: 0.64, green: 0.40, blue: 0.45, alpha: 1), fadeInAnimation: nil)
     }
 }

@@ -13,6 +13,7 @@ class EventEditViewController: UIViewController {
     
     @IBOutlet var titleTextField: UITextField!
     
+    @IBOutlet var sendButton: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var adressTextField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
@@ -26,6 +27,12 @@ class EventEditViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
+        sendButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        sendButton.layer.cornerRadius = 0.5 * sendButton.bounds.size.width
+        sendButton.clipsToBounds = true
+        
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         print("loooool :", self.event!)
         self.titleTextField.text = self.event.name
         self.descriptionTextView.text = self.event.description
