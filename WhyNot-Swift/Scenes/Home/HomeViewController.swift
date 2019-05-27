@@ -29,7 +29,15 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func goToReportList(_ sender: Any) {
+        firstAnimation()
+        //ReportService.default.getUsers { (users) in
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+
+            let report = ReportUserListViewController.newInstance()
+            self.navigationController?.pushViewController(report, animated: true)
+        //}
         print("goToReportList")
+        
     }
     
     /*

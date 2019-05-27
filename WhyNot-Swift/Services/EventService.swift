@@ -44,8 +44,8 @@ public class EventService {
         ]
         Alamofire.request("https://demo6576625.mockable.io/events",method: .post,parameters: param,encoding: JSONEncoding.default).responseJSON { (res) in
             guard let code = res.result.value as? [String:Any] else {return}
-            let result = code["status_code"]
-            completion(res)
+            let result = code["error"]
+            completion(result)
         }
     }
     
@@ -59,8 +59,8 @@ public class EventService {
         ]
         Alamofire.request("https://demo6576625.mockable.io/events",method: .post,parameters: param,encoding: JSONEncoding.default).responseJSON { (res) in
             guard let code = res.result.value as? [String:Any] else {return}
-            let result = code["status_code"]
-            completion(res)
+            let result = code["error"]
+            completion(result)
         }
     }
 

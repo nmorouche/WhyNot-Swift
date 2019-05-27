@@ -28,6 +28,19 @@
 		9637131D229497DA00C48C3B /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9637131B229497DA00C48C3B /* EventDetailViewController.xib */; };
 		963713202294A36A00C48C3B /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9637131E2294A36A00C48C3B /* EventEditViewController.swift */; };
 		963713212294A36A00C48C3B /* EventEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9637131F2294A36A00C48C3B /* EventEditViewController.xib */; };
+		963713232295A1F000C48C3B /* ReportServie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963713222295A1F000C48C3B /* ReportServie.swift */; };
+		963713362295BB1500C48C3B /* ReportUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963713342295BB1500C48C3B /* ReportUserTableViewCell.swift */; };
+		963713372295BB1500C48C3B /* ReportUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963713352295BB1500C48C3B /* ReportUserTableViewCell.xib */; };
+		963713392295C16400C48C3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963713382295C16400C48C3B /* User.swift */; };
+		96DAF1152297067500CE3414 /* ReportUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DAF1132297067500CE3414 /* ReportUserListViewController.swift */; };
+		96DAF1162297067500CE3414 /* ReportUserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DAF1142297067500CE3414 /* ReportUserListViewController.xib */; };
+		96DAF1192299492900CE3414 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DAF1172299492900CE3414 /* UserViewController.swift */; };
+		96DAF11A2299492900CE3414 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DAF1182299492900CE3414 /* UserViewController.xib */; };
+		96DAF11C229953E600CE3414 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DAF11B229953E600CE3414 /* Report.swift */; };
+		96DAF11F229965AE00CE3414 /* ReportListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DAF11D229965AE00CE3414 /* ReportListViewController.swift */; };
+		96DAF120229965AE00CE3414 /* ReportListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DAF11E229965AE00CE3414 /* ReportListViewController.xib */; };
+		96DAF1232299675E00CE3414 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DAF1212299675E00CE3414 /* ReportTableViewCell.swift */; };
+		96DAF1242299675E00CE3414 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DAF1222299675E00CE3414 /* ReportTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +67,19 @@
 		9637131B229497DA00C48C3B /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		9637131E2294A36A00C48C3B /* EventEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		9637131F2294A36A00C48C3B /* EventEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventEditViewController.xib; sourceTree = "<group>"; };
+		963713222295A1F000C48C3B /* ReportServie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServie.swift; sourceTree = "<group>"; };
+		963713342295BB1500C48C3B /* ReportUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserTableViewCell.swift; sourceTree = "<group>"; };
+		963713352295BB1500C48C3B /* ReportUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportUserTableViewCell.xib; sourceTree = "<group>"; };
+		963713382295C16400C48C3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		96DAF1132297067500CE3414 /* ReportUserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserListViewController.swift; sourceTree = "<group>"; };
+		96DAF1142297067500CE3414 /* ReportUserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportUserListViewController.xib; sourceTree = "<group>"; };
+		96DAF1172299492900CE3414 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		96DAF1182299492900CE3414 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		96DAF11B229953E600CE3414 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		96DAF11D229965AE00CE3414 /* ReportListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListViewController.swift; sourceTree = "<group>"; };
+		96DAF11E229965AE00CE3414 /* ReportListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportListViewController.xib; sourceTree = "<group>"; };
+		96DAF1212299675E00CE3414 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		96DAF1222299675E00CE3414 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		C9A9C8BD2B88DE80680C6A15 /* Pods-WhyNot-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNot-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhyNot-Swift/Pods-WhyNot-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		DF7197BB644E11B171035D8B /* Pods_WhyNot_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyNot_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C6B07B06335205D7DA5252 /* Pods-WhyNot-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNot-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhyNot-Swift/Pods-WhyNot-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,10 +175,29 @@
 			path = "WhyNot-Swift";
 			sourceTree = "<group>";
 		};
+		963713242295B7AF00C48C3B /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				963713342295BB1500C48C3B /* ReportUserTableViewCell.swift */,
+				963713352295BB1500C48C3B /* ReportUserTableViewCell.xib */,
+				96DAF1132297067500CE3414 /* ReportUserListViewController.swift */,
+				96DAF1142297067500CE3414 /* ReportUserListViewController.xib */,
+				96DAF1172299492900CE3414 /* UserViewController.swift */,
+				96DAF1182299492900CE3414 /* UserViewController.xib */,
+				96DAF11D229965AE00CE3414 /* ReportListViewController.swift */,
+				96DAF11E229965AE00CE3414 /* ReportListViewController.xib */,
+				96DAF1212299675E00CE3414 /* ReportTableViewCell.swift */,
+				96DAF1222299675E00CE3414 /* ReportTableViewCell.xib */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		9674CF04226B18EC00D59E63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				5E4A2E76228C48E400DFF211 /* Event.swift */,
+				963713382295C16400C48C3B /* User.swift */,
+				96DAF11B229953E600CE3414 /* Report.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				5E4A2E8C228C58C300DFF211 /* EventService.swift */,
+				963713222295A1F000C48C3B /* ReportServie.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -168,6 +214,7 @@
 		9674CF06226B190C00D59E63 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				963713242295B7AF00C48C3B /* Report */,
 				5E4A2E7C228C528E00DFF211 /* Home */,
 				5E4A2E71228C448000DFF211 /* Events */,
 			);
@@ -236,14 +283,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4A2E7B228C4C3A00DFF211 /* EventTableViewCell.xib in Resources */,
+				963713372295BB1500C48C3B /* ReportUserTableViewCell.xib in Resources */,
+				96DAF1162297067500CE3414 /* ReportUserListViewController.xib in Resources */,
 				5EF9BB5C2265D5E100F256EE /* LaunchScreen.storyboard in Resources */,
 				5E4A2E75228C44D400DFF211 /* EventListViewController.xib in Resources */,
+				96DAF1242299675E00CE3414 /* ReportTableViewCell.xib in Resources */,
 				5E4A2E88228C55EB00DFF211 /* Localizable.strings in Resources */,
 				5E4A2E91228C59F800DFF211 /* InsertEventViewController.xib in Resources */,
 				963713212294A36A00C48C3B /* EventEditViewController.xib in Resources */,
 				9637131D229497DA00C48C3B /* EventDetailViewController.xib in Resources */,
 				5EF9BB592265D5E100F256EE /* Assets.xcassets in Resources */,
+				96DAF120229965AE00CE3414 /* ReportListViewController.xib in Resources */,
 				5EF9BB572265D5E100F256EE /* Main.storyboard in Resources */,
+				96DAF11A2299492900CE3414 /* UserViewController.xib in Resources */,
 				5E4A2E80228C52B500DFF211 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,14 +357,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4A2E90228C59F800DFF211 /* InsertEventViewController.swift in Sources */,
+				96DAF1192299492900CE3414 /* UserViewController.swift in Sources */,
+				963713362295BB1500C48C3B /* ReportUserTableViewCell.swift in Sources */,
+				96DAF11C229953E600CE3414 /* Report.swift in Sources */,
 				963713202294A36A00C48C3B /* EventEditViewController.swift in Sources */,
 				5E4A2E77228C48E400DFF211 /* Event.swift in Sources */,
 				5EF9BB542265D5E100F256EE /* ViewController.swift in Sources */,
+				96DAF1152297067500CE3414 /* ReportUserListViewController.swift in Sources */,
+				963713392295C16400C48C3B /* User.swift in Sources */,
+				96DAF1232299675E00CE3414 /* ReportTableViewCell.swift in Sources */,
 				9637131C229497DA00C48C3B /* EventDetailViewController.swift in Sources */,
 				5E4A2E74228C44D400DFF211 /* EventListViewController.swift in Sources */,
 				5E4A2E7A228C4C3A00DFF211 /* EventTableViewCell.swift in Sources */,
 				5EF9BB522265D5E100F256EE /* AppDelegate.swift in Sources */,
 				5E4A2E7F228C52B500DFF211 /* HomeViewController.swift in Sources */,
+				96DAF11F229965AE00CE3414 /* ReportListViewController.swift in Sources */,
+				963713232295A1F000C48C3B /* ReportServie.swift in Sources */,
 				5E4A2E8D228C58C300DFF211 /* EventService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
