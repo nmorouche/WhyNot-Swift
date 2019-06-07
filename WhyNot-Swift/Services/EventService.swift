@@ -33,4 +33,35 @@ public class EventService {
             completion(singleEvent)
         }
     }
+    
+    public func insertEvent(title:String,date:String,adress:String,image:String,description:String,completion: @escaping (Any) -> Void) {
+        let param = [
+            "title":title,
+            "description":description,
+            "date":date,
+            "adress":adress,
+            "image":image
+        ]
+        Alamofire.request("https://demo6576625.mockable.io/events",method: .post,parameters: param,encoding: JSONEncoding.default).responseJSON { (res) in
+            guard let code = res.result.value as? [String:Any] else {return}
+            let result = code["error"]
+            completion(result)
+        }
+    }
+    
+    public func editEvent(title:String,date:String,adress:String,image:String,description:String,completion: @escaping (Any) -> Void) {
+        let param = [
+            "title":title,
+            "description":description,
+            "date":date,
+            "adress":adress,
+            "image":image
+        ]
+        Alamofire.request("https://demo6576625.mockable.io/events",method: .post,parameters: param,encoding: JSONEncoding.default).responseJSON { (res) in
+            guard let code = res.result.value as? [String:Any] else {return}
+            let result = code["error"]
+            completion(result)
+        }
+    }
+
 }

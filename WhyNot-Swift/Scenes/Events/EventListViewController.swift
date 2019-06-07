@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
+
 
 class EventListViewController: UIViewController {
 
@@ -78,7 +80,9 @@ extension EventListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        firstAnimation()
         //EventService.default.getEvent() { (event) in
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
             let detail = EventDetailViewController.newInstance(event: events[indexPath.row])
             self.navigationController?.pushViewController(detail, animated: true)
         //}
@@ -86,3 +90,11 @@ extension EventListViewController: UITableViewDataSource {
     
     
 }
+extension EventListViewController : NVActivityIndicatorViewable {
+    
+    func firstAnimation() {
+        let size = CGSize(width: 30, height: 30)
+        startAnimating(size, message: NSLocalizedString("HomeViewController.goToEventList.loading", comment: ""), type: .circleStrokeSpin, color: UIColor.blue, backgroundColor: UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.9), textColor: UIColor.red, fadeInAnimation: nil)
+    }
+}
+

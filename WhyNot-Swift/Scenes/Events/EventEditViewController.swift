@@ -13,6 +13,7 @@ class EventEditViewController: UIViewController {
     
     @IBOutlet var titleTextField: UITextField!
     
+    @IBOutlet var sendButton: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var adressTextField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
@@ -26,6 +27,12 @@ class EventEditViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
+        sendButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        sendButton.layer.cornerRadius = 0.5 * sendButton.bounds.size.width
+        sendButton.clipsToBounds = true
+        
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         print("loooool :", self.event!)
         self.titleTextField.text = self.event.name
         self.descriptionTextView.text = self.event.description
@@ -45,11 +52,15 @@ class EventEditViewController: UIViewController {
     }
     
     @IBAction func editEvent(_ sender: Any) {
-        print(self.titleTextField.text!)
-        print(self.descriptionTextView.text!)
-        print(self.adressTextField.text!)
-        print(dateFormat(date: self.datePicker.date))
-        print(self.imageTextField.text!)
+        //EventService.default.editEvent(title: self.titleTextField.text!, date: dateFormat(date: self.datePicker.date), adress: self.adressTextField.text!, image: self.imageTextField.text!, //description: self.descriptionTextView.text!) { (code) in
+            //if (code == "200"){
+                EventService.default.getEvents(completion: { (event) in
+                    let list = EventListViewController.newInstance(events: event)
+                    self.navigationController?.pushViewController(list, animated: true)
+                })
+                
+            //}
+       // }
     }
     
     

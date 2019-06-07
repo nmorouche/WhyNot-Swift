@@ -12,6 +12,7 @@ class InsertEventViewController: UIViewController {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleTextField: UITextField!
+    @IBOutlet var sendButton: UIButton!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var addressLabel: UILabel!
@@ -26,6 +27,10 @@ class InsertEventViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        sendButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        sendButton.layer.cornerRadius = 0.5 * sendButton.bounds.size.width
+        sendButton.clipsToBounds = true
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -40,11 +45,15 @@ class InsertEventViewController: UIViewController {
     }
     
     @IBAction func createEvent(_ sender: Any) {
-        print(self.titleTextField.text!)
-        print(self.descriptionTextView.text!)
-        print(self.addressTextField.text!)
-        print(dateFormat(date: self.datePicker.date))
-        print(self.imageTextField.text!)
+        //EventService.default.insertEvent(title: self.titleTextField.text!, date: dateFormat(date: self.datePicker.date), adress: self.adressTextField.text!, image: self.imageTextField.text!, //description: self.descriptionTextView.text!) { (code) in
+        //if (code == "200"){
+        EventService.default.getEvents(completion: { (event) in
+            let list = EventListViewController.newInstance(events: event)
+            self.navigationController?.pushViewController(list, animated: true)
+        })
+        
+        //}
+        // }
     }
     
     /*
