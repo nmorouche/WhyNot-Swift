@@ -11,6 +11,13 @@ import NVActivityIndicatorView
 
 class HomeViewController: UIViewController {
     
+    
+    class func newInstance() -> HomeViewController{
+        let elvc = HomeViewController()
+        
+        return elvc
+    }
+    
     @IBOutlet var goToEventList: UIButton!
     @IBOutlet var goToReportList: UIButton!
     @IBOutlet var reportButton: UIButton!
@@ -19,7 +26,7 @@ class HomeViewController: UIViewController {
         eventButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         eventButton.layer.cornerRadius = 0.5 * eventButton.bounds.size.width
         eventButton.clipsToBounds = true
-        
+        self.navigationItem.setHidesBackButton(true, animated:true);
         reportButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         reportButton.layer.cornerRadius = 0.5 * reportButton.bounds.size.width
         reportButton.clipsToBounds = true
@@ -39,12 +46,12 @@ class HomeViewController: UIViewController {
 
     @IBAction func goToReportList(_ sender: Any) {
         firstAnimation()
-        //ReportService.default.getUsers { (users) in
+        ReportService.default.getUsers { (users) in
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
 
-            let report = ReportUserListViewController.newInstance()
+            let report = ReportUserListViewController.newInstance(users: users)
             self.navigationController?.pushViewController(report, animated: true)
-        //}
+        }
         print("goToReportList")
         
     }

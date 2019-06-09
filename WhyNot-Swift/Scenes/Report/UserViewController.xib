@@ -52,60 +52,46 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwQ-6X-E7O">
                     <rect key="frame" x="315" y="851" width="394" height="275"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="275" id="6sA-53-2Q6"/>
+                    </constraints>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBc-qK-aCb">
-                    <rect key="frame" x="557" y="1180" width="196" height="109"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPc-I7-lG1">
+                    <rect key="frame" x="423" y="1195" width="179" height="75"/>
                     <color key="backgroundColor" red="0.82745098039999998" green="0.28627450980000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="196" id="AYp-Wd-QNG"/>
-                        <constraint firstAttribute="height" constant="109" id="gm5-JO-sMJ"/>
-                    </constraints>
-                    <state key="normal" title="CHECK">
+                    <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="checkButton:" destination="-1" eventType="touchUpInside" id="ycF-2I-dz8"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugy-6e-0bL">
-                    <rect key="frame" x="271" y="1180" width="196" height="109"/>
-                    <color key="backgroundColor" red="0.82745098039999998" green="0.28627450980000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="BANIR">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="banButton:" destination="-1" eventType="touchUpInside" id="Yec-Ga-omF"/>
+                        <action selector="banButton:" destination="-1" eventType="touchUpInside" id="uNr-bO-tHo"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
-                <constraint firstItem="UBc-qK-aCb" firstAttribute="top" secondItem="ugy-6e-0bL" secondAttribute="top" id="3Y6-Zi-C9J"/>
                 <constraint firstItem="crt-iJ-Ows" firstAttribute="centerX" secondItem="qLI-Bg-G77" secondAttribute="centerX" id="6hR-pj-t2m"/>
                 <constraint firstItem="qLI-Bg-G77" firstAttribute="top" secondItem="HS7-Bh-Lbe" secondAttribute="bottom" constant="48" id="A34-RH-Ave"/>
                 <constraint firstItem="HS7-Bh-Lbe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="609" id="BMR-ge-OTr"/>
                 <constraint firstItem="vnx-CB-AP8" firstAttribute="top" secondItem="qLI-Bg-G77" secondAttribute="bottom" constant="48" id="C0I-Zv-Gdd"/>
-                <constraint firstItem="crt-iJ-Ows" firstAttribute="leading" secondItem="ugy-6e-0bL" secondAttribute="leading" id="Clf-HO-bgq"/>
-                <constraint firstItem="UBc-qK-aCb" firstAttribute="top" secondItem="OwQ-6X-E7O" secondAttribute="bottom" constant="54" id="FZ4-tD-jrr"/>
                 <constraint firstItem="crt-iJ-Ows" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GIk-W9-nxH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GPc-I7-lG1" secondAttribute="bottom" constant="76" id="HOA-vn-WsN"/>
                 <constraint firstItem="crt-iJ-Ows" firstAttribute="centerX" secondItem="vnx-CB-AP8" secondAttribute="centerX" id="JRL-Ez-0qq"/>
                 <constraint firstItem="OwQ-6X-E7O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="315" id="LJB-TE-Ly3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UBc-qK-aCb" secondAttribute="bottom" constant="57" id="Lv8-k1-Sr7"/>
                 <constraint firstItem="crt-iJ-Ows" firstAttribute="centerX" secondItem="HS7-Bh-Lbe" secondAttribute="centerX" id="YbH-XT-d4S"/>
+                <constraint firstItem="GPc-I7-lG1" firstAttribute="top" secondItem="OwQ-6X-E7O" secondAttribute="bottom" constant="69" id="aR8-A4-57a"/>
                 <constraint firstItem="crt-iJ-Ows" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="271" id="bXD-EP-HCP"/>
-                <constraint firstItem="UBc-qK-aCb" firstAttribute="baseline" secondItem="ugy-6e-0bL" secondAttribute="firstBaseline" id="cvt-n3-lsx"/>
+                <constraint firstItem="GPc-I7-lG1" firstAttribute="centerX" secondItem="OwQ-6X-E7O" secondAttribute="centerX" id="hmP-Yt-rZn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OwQ-6X-E7O" secondAttribute="trailing" constant="315" id="mEK-vW-xQU"/>
+                <constraint firstItem="GPc-I7-lG1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="423" id="qnG-33-zSR"/>
                 <constraint firstItem="HS7-Bh-Lbe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="400" id="r9g-dJ-8OI"/>
                 <constraint firstItem="HS7-Bh-Lbe" firstAttribute="leading" secondItem="qLI-Bg-G77" secondAttribute="leading" id="sir-qA-Nm7"/>
                 <constraint firstItem="OwQ-6X-E7O" firstAttribute="top" secondItem="vnx-CB-AP8" secondAttribute="bottom" constant="56" id="uOh-Yc-rai"/>
-                <constraint firstItem="UBc-qK-aCb" firstAttribute="leading" secondItem="ugy-6e-0bL" secondAttribute="trailing" constant="90" id="vfn-dW-1kP"/>
                 <constraint firstItem="crt-iJ-Ows" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="124" id="vmQ-18-Ci2"/>
                 <constraint firstItem="HS7-Bh-Lbe" firstAttribute="leading" secondItem="vnx-CB-AP8" secondAttribute="leading" id="wiB-R3-Ui3"/>
-                <constraint firstItem="crt-iJ-Ows" firstAttribute="trailing" secondItem="UBc-qK-aCb" secondAttribute="trailing" id="xgX-yU-QCl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.8671875" y="110.68814055636895"/>

@@ -9,7 +9,7 @@
 import Foundation
 
 public struct User {
-    
+    var id :String
     var email: String
     var username:String
     var photo:String
@@ -24,6 +24,7 @@ public struct User {
         guard let email = json["email"] as? String,
             let birthdate = json["birthdate"] as? String,
             let username = json["username"] as? String,
+            let id = json["_id"] as? String,
             let photo = json["photo"] as? String,
             let sexe = json["sexe"] as? String,
         let bio = json["bio"] as? String,
@@ -35,9 +36,10 @@ public struct User {
         self.sexe = sexe
         self.bio = bio
         self.preference = preference
+        self.id = id
     }
     
-    init(email: String, username: String, birthdate: String, sexe: String, photo: String,preference: String,bio: String) {
+    init(email: String, username: String, birthdate: String, sexe: String, photo: String,preference: String,bio: String,id:String) {
         self.email = email
         self.username = username
         self.birthdate = birthdate
@@ -45,5 +47,6 @@ public struct User {
         self.photo = photo
         self.preference = preference
         self.bio = bio
+        self.id = id
     }
 }
