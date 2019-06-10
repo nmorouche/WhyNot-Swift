@@ -14,9 +14,9 @@ class ReportListViewController: UIViewController {
     
     
     @IBOutlet var reportsTableView: UITableView!
-    class func newInstance(/*reports: [Report]*/) -> ReportListViewController{
+    class func newInstance(reports: [Report]) -> ReportListViewController{
         let elvc = ReportListViewController()
-        //elvc.reports = reports
+        elvc.reports = reports
         return elvc
     }
     
@@ -40,22 +40,16 @@ extension ReportListViewController: UITableViewDelegate {
 extension ReportListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 40/*self.reports.count*/
+        return self.reports.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReportListViewController.reportCellId, for: indexPath) as! ReportTableViewCell
         
-        /* let report = reports[indexPath.row]*/
-        cell.reportLabel.text = "TEST" //report.type
-        cell.descTextField.text = "efachgnkzjegbklxhncgzie,xghiehgk,hsoe" //report.description
+        let report = reports[indexPath.row]
+        cell.reportLabel.text = report.type
+        cell.descTextField.text = report.description
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //let user = UserViewController.newInstance(/*user: users[indexPath.row]*/)
-        //self.navigationController?.pushViewController(user, animated: true)
     }
     
     
