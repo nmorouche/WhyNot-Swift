@@ -13,9 +13,7 @@ class HomeViewController: UIViewController {
     
     
     class func newInstance() -> HomeViewController{
-        let elvc = HomeViewController()
-        
-        return elvc
+        return HomeViewController()
     }
     
     @IBOutlet var goToEventList: UIButton!
@@ -47,13 +45,10 @@ class HomeViewController: UIViewController {
     @IBAction func goToReportList(_ sender: Any) {
         firstAnimation()
         ReportService.default.getUsers { (users) in
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
-
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
             let report = ReportUserListViewController.newInstance(users: users)
             self.navigationController?.pushViewController(report, animated: true)
         }
-        print("goToReportList")
-        
     }
     
     /*

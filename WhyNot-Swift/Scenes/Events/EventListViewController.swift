@@ -81,11 +81,9 @@ extension EventListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         firstAnimation()
-        //EventService.default.getEvent() { (event) in
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
-            let detail = EventDetailViewController.newInstance(event: events[indexPath.row])
-            self.navigationController?.pushViewController(detail, animated: true)
-        //}
+        let detail = EventDetailViewController.newInstance(event: events[indexPath.row])
+        self.navigationController?.pushViewController(detail, animated: true)
     }
     
     

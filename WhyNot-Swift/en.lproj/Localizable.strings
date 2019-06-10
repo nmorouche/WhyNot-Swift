@@ -9,3 +9,14 @@
 "HomeViewController.goToEventList.title" = "Event";
 "HomeViewController.goToReportList.title" = "Report";
 "HomeViewController.goToEventList.loading" = "Loading...";
+"SignupViewController.signupLabel.text" = "Create your account";
+"SignupViewController.firstnameLabel.text" = "Firstname";
+"SignupViewController.lastnameLabel.text" = "Lastname";
+"SignupViewController.emailLabel.text" = "Email";
+"SignupViewController.passwordLabel.text" = "Password";
+"SignupViewController.signupButton.title" = "Submit";
+"LoginViewController.loginLabel.text" = "Login";
+"LoginViewController.emailLabel.text" = "Email";
+"LoginViewController.passwordLabel.text" = "Password";
+"LoginViewController.loginButton.title" = "Connect";
+"LoginViewController.signupButton.title" = "Sign up";
