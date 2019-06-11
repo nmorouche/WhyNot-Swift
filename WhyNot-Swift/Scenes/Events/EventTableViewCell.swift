@@ -15,6 +15,9 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var eventIV: UIImageView!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var subonlyLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

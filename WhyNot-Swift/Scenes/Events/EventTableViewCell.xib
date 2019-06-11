@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoJ-cG-lPx">
-                        <rect key="frame" x="41" y="82" width="200" height="21"/>
+                        <rect key="frame" x="41" y="82" width="200" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -89,8 +89,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="xoJ-cG-lPx" id="0dM-W3-JXw"/>
+                <outlet property="descriptionLabel" destination="odb-mT-sEy" id="qra-Cf-Yrl"/>
                 <outlet property="eventIV" destination="ci1-W5-jPF" id="fYu-cM-wtC"/>
                 <outlet property="locationLabel" destination="7ln-ot-qtF" id="cqd-bG-IfC"/>
+                <outlet property="priceLabel" destination="Jk1-rR-FNQ" id="GD1-Zk-Qim"/>
+                <outlet property="subonlyLabel" destination="jSm-md-0bU" id="oyL-Bl-fX8"/>
                 <outlet property="titleLabel" destination="7Th-Gs-aW2" id="QiM-7U-81w"/>
             </connections>
             <point key="canvasLocation" x="355.07246376811599" y="127.90178571428571"/>

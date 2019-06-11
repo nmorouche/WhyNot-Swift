@@ -12,13 +12,17 @@ class EventEditViewController: UIViewController {
     
     
     @IBOutlet var titleTextField: UITextField!
-    
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var addressTextField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var imageTextField: UITextField!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var subonlyLabel: UILabel!
+    @IBOutlet var priceTextField: UITextField!
+    @IBOutlet var subonlySwitch: UISwitch!
     var event: Event!
+    var subonlyValue: Bool!
     
     public class func newInstance(event: Event) -> EventEditViewController {
         let eevc = EventEditViewController()
@@ -27,18 +31,18 @@ class EventEditViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
         sendButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         sendButton.layer.cornerRadius = 0.5 * sendButton.bounds.size.width
         sendButton.clipsToBounds = true
-        
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        print("loooool :", self.event!)
         self.titleTextField.text = self.event.name
         self.descriptionTextView.text = self.event.description
         self.imageTextField.text = self.event.imageURL
+        self.addressTextField.text = self.event.address
+        self.subonlyValue = self.event.sub_only
+        subonlySwitch.isOn = subonlyValue
+        self.priceTextField.text = "\(self.event.price)"
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     func dateFormat(date: Date) -> String {
@@ -50,19 +54,37 @@ class EventEditViewController: UIViewController {
         return dateStringified
     }
     
+    
+    @IBAction func onChangeSwitch(_ sender: Any) {
+        self.subonlyValue = subonlySwitch.isOn ? true : false
+        print(self.subonlyValue)
+    }
+    
     @IBAction func editEvent(_ sender: Any) {
+        print("name:" + titleTextField.text!)
+        print("description:" + descriptionTextView.text)
+        print("address:" + addressTextField.text!)
+        print("image:" + imageTextField.text!)
+        print("price:" + priceTextField.text!)
+        print("subonly:", subonlyValue!)
         guard let name = titleTextField.text,
             let description = descriptionTextView.text,
             let address = addressTextField.text,
-            let image = imageTextField.text else { return }
+            let image = imageTextField.text,
+            let price = priceTextField.text,
+            let subonly = subonlyValue else { return }
         let params: [String:Any] = [
+            "_id": self.event._id,
             "name": name,
             "description": description,
-            "date": dateFormat(date: datePicker.date),
             "address": address,
-            "imageURL": image
+            "date": dateFormat(date: datePicker.date),
+            "imageURL": image,
+            "price": Int(price),
+            "sub_only": subonly
         ]
-        EventService.default.insertEvent(params: params) { (result) in
+        print(params)
+        EventService.default.editEvent(params: params) { (result) in
             self.alertStatus()
         }
     }

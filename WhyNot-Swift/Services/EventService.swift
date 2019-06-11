@@ -45,18 +45,17 @@ public class EventService {
         }
     }
     
-    public func editEvent(title:String,date:String,adress:String,image:String,description:String,completion: @escaping (Any) -> Void) {
-        let param = [
-            "title":title,
-            "description":description,
-            "date":date,
-            "adress":adress,
-            "image":image
-        ]
-        Alamofire.request(baseurl + "/",method: .post,parameters: param,encoding: JSONEncoding.default, headers: headers).responseJSON { (res) in
-            guard let code = res.result.value as? [String:Any] else {return}
-            let result = code["error"]
-            completion(result)
+    public func editEvent(params: [String:Any], completion: @escaping (Int) -> Void) {
+        guard let _id = params["_id"] as? String else { return }
+        Alamofire.request(baseurl + "/" + _id, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (res) in
+            guard let code = res.result.value as? [String:Any],
+                let statusCode = res.response?.statusCode else { return }
+            if(statusCode == 200) {
+                completion(statusCode)
+            } else {
+                guard let error = code["error"] as? String else { return }
+                completion(statusCode)
+            }
         }
     }
 

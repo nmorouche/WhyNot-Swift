@@ -25,7 +25,7 @@ class InsertEventViewController: UIViewController {
     @IBOutlet var subonlySwitch: UISwitch!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var priceTextField: UITextField!
-    var sub_only = false
+    var subonlyValue = false
     
     public class func newInstance() -> InsertEventViewController {
         return InsertEventViewController()
@@ -62,7 +62,7 @@ class InsertEventViewController: UIViewController {
             "address": address,
             "imageURL": image,
             "price": Int(price),
-            "sub_only": self.sub_only
+            "sub_only": self.subonlyValue
         ]
         EventService.default.insertEvent(params: params) { (result) in
             self.alertStatus()
@@ -82,8 +82,8 @@ class InsertEventViewController: UIViewController {
     }
     
     @IBAction func subOnlySwitch(_ sender: Any) {
-        self.sub_only = subonlySwitch.isOn ? true : false
-        print(self.sub_only)
+        self.subonlyValue = subonlySwitch.isOn ? true : false
+        print(self.subonlyValue)
     }
     
 }
