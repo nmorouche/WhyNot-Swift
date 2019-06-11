@@ -76,16 +76,17 @@ extension EventListViewController: UITableViewDataSource {
         let imageURL = URL(string: event.imageURL)
         let imageData = try! Data(contentsOf: imageURL!)
         cell.eventIV.image = UIImage(data: imageData)
+        cell.descriptionLabel.text = event.description
+        cell.priceLabel.text = "\(event.price)" + "€"
+        cell.subonlyLabel.text = "\(event.sub_only)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         firstAnimation()
-        //EventService.default.getEvent() { (event) in
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
-            let detail = EventDetailViewController.newInstance(event: events[indexPath.row])
-            self.navigationController?.pushViewController(detail, animated: true)
-        //}
+        let detail = EventDetailViewController.newInstance(event: events[indexPath.row])
+        self.navigationController?.pushViewController(detail, animated: true)
     }
     
     

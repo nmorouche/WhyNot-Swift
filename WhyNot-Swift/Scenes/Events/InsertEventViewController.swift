@@ -10,6 +10,7 @@ import UIKit
 
 class InsertEventViewController: UIViewController {
 
+    @IBOutlet var subonlyLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var sendButton: UIButton!
@@ -21,6 +22,10 @@ class InsertEventViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var imageLabel: UILabel!
     @IBOutlet var imageTextField: UITextField!
+    @IBOutlet var subonlySwitch: UISwitch!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var priceTextField: UITextField!
+    var subonlyValue = false
     
     public class func newInstance() -> InsertEventViewController {
         return InsertEventViewController()
@@ -32,7 +37,7 @@ class InsertEventViewController: UIViewController {
         sendButton.clipsToBounds = true
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        subonlySwitch.isOn = false
     }
     
     func dateFormat(date: Date) -> String {
@@ -45,25 +50,40 @@ class InsertEventViewController: UIViewController {
     }
     
     @IBAction func createEvent(_ sender: Any) {
-        //EventService.default.insertEvent(title: self.titleTextField.text!, date: dateFormat(date: self.datePicker.date), adress: self.adressTextField.text!, image: self.imageTextField.text!, //description: self.descriptionTextView.text!) { (code) in
-        //if (code == "200"){
-        EventService.default.getEvents(completion: { (event) in
-            let list = EventListViewController.newInstance(events: event)
-            self.navigationController?.pushViewController(list, animated: true)
-        })
-        
-        //}
-        // }
+        guard let name = titleTextField.text,
+            let description = descriptionTextView.text,
+            let address = addressTextField.text,
+            let image = imageTextField.text,
+            let price = priceTextField.text else { return }
+        let params: [String:Any] = [
+            "name": name,
+            "description": description,
+            "date": dateFormat(date: datePicker.date),
+            "address": address,
+            "imageURL": image,
+            "price": Int(price),
+            "sub_only": self.subonlyValue
+        ]
+        EventService.default.insertEvent(params: params) { (result) in
+            self.alertStatus()
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func alertStatus() {
+        let alert = UIAlertController(title: "Insertion réussi", message: "Votre évènement a bien été enregistré", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+            EventService.default.getEvents { (events) in
+                let push = EventListViewController.newInstance(events: events)
+                self.navigationController?.pushViewController(push, animated: true)
+            }
+        })
+        alert.addAction(ok)
+        self.present(alert, animated: true)
     }
-    */
+    
+    @IBAction func subOnlySwitch(_ sender: Any) {
+        self.subonlyValue = subonlySwitch.isOn ? true : false
+        print(self.subonlyValue)
+    }
     
 }

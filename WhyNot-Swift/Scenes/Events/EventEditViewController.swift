@@ -12,13 +12,17 @@ class EventEditViewController: UIViewController {
     
     
     @IBOutlet var titleTextField: UITextField!
-    
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
-    @IBOutlet var adressTextField: UITextField!
+    @IBOutlet var addressTextField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var imageTextField: UITextField!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var subonlyLabel: UILabel!
+    @IBOutlet var priceTextField: UITextField!
+    @IBOutlet var subonlySwitch: UISwitch!
     var event: Event!
+    var subonlyValue: Bool!
     
     public class func newInstance(event: Event) -> EventEditViewController {
         let eevc = EventEditViewController()
@@ -27,19 +31,18 @@ class EventEditViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
         sendButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         sendButton.layer.cornerRadius = 0.5 * sendButton.bounds.size.width
         sendButton.clipsToBounds = true
-        
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        print("loooool :", self.event!)
         self.titleTextField.text = self.event.name
         self.descriptionTextView.text = self.event.description
-        self.adressTextField.text = self.event.address
         self.imageTextField.text = self.event.imageURL
+        self.addressTextField.text = self.event.address
+        self.subonlyValue = self.event.sub_only
+        subonlySwitch.isOn = subonlyValue
+        self.priceTextField.text = "\(self.event.price)"
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     func dateFormat(date: Date) -> String {
@@ -51,27 +54,50 @@ class EventEditViewController: UIViewController {
         return dateStringified
     }
     
-    @IBAction func editEvent(_ sender: Any) {
-        //EventService.default.editEvent(title: self.titleTextField.text!, date: dateFormat(date: self.datePicker.date), adress: self.adressTextField.text!, image: self.imageTextField.text!, //description: self.descriptionTextView.text!) { (code) in
-            //if (code == "200"){
-                EventService.default.getEvents(completion: { (event) in
-                    let list = EventListViewController.newInstance(events: event)
-                    self.navigationController?.pushViewController(list, animated: true)
-                })
-                
-            //}
-       // }
+    
+    @IBAction func onChangeSwitch(_ sender: Any) {
+        self.subonlyValue = subonlySwitch.isOn ? true : false
+        print(self.subonlyValue)
     }
     
+    @IBAction func editEvent(_ sender: Any) {
+        print("name:" + titleTextField.text!)
+        print("description:" + descriptionTextView.text)
+        print("address:" + addressTextField.text!)
+        print("image:" + imageTextField.text!)
+        print("price:" + priceTextField.text!)
+        print("subonly:", subonlyValue!)
+        guard let name = titleTextField.text,
+            let description = descriptionTextView.text,
+            let address = addressTextField.text,
+            let image = imageTextField.text,
+            let price = priceTextField.text,
+            let subonly = subonlyValue else { return }
+        let params: [String:Any] = [
+            "_id": self.event._id,
+            "name": name,
+            "description": description,
+            "address": address,
+            "date": dateFormat(date: datePicker.date),
+            "imageURL": image,
+            "price": Int(price),
+            "sub_only": subonly
+        ]
+        print(params)
+        EventService.default.editEvent(params: params) { (result) in
+            self.alertStatus()
+        }
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func alertStatus() {
+        let alert = UIAlertController(title: "Insertion réussi", message: "Votre évènement a bien été enregistré", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+            EventService.default.getEvents { (events) in
+                let push = EventListViewController.newInstance(events: events)
+                self.navigationController?.pushViewController(push, animated: true)
+            }
+        })
+        alert.addAction(ok)
+        self.present(alert, animated: true)
+    }
 }

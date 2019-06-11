@@ -12,17 +12,18 @@ import Alamofire
 public class ReportService {
     
     public static let `default` = ReportService()
-    private init(){
-        
-}
+    private init(){}
+    let headers: HTTPHeaders = [
+        "x-access-token": Session.default.token,
+        "Content-Type": "application/json"
+    ]
+    
     public func getUsers(completion: @escaping ([User]) -> Void) {
-        Alamofire.request("http://localhost:3000/report/").responseJSON { (res) in
+        Alamofire.request("http://localhost:3000/report/", headers: headers).responseJSON { (res) in
             guard let user = res.value as? [String:Any],
             let user2 = user["users"] as? [[String:Any]] else {return}
-            
             let users = user2.compactMap({ (elem) -> User? in
                 return User(json: elem)
-                
             })
             
             completion(users)
@@ -30,7 +31,7 @@ public class ReportService {
     }
     
     public func getReports(id:String,completion: @escaping ([Report]) -> Void) {
-        Alamofire.request("http://localhost:3000/report/\(id)").responseJSON { (res) in
+        Alamofire.request("http://localhost:3000/report/\(id)", headers: headers).responseJSON { (res) in
             
             
             guard let report = res.value as? [String:Any],
@@ -44,11 +45,11 @@ public class ReportService {
     }
     
     public func banUser(id:String,completion: @escaping (Int) -> Void) {
-        
         let param = [
             "idReported" : id
         ]
-        Alamofire.request("http://localhost:3000/report/ban",method: .post,parameters: param,encoding: JSONEncoding.default).responseJSON { (res) in
+        
+        Alamofire.request("http://localhost:3000/report/ban",method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { (res) in
             
            
             

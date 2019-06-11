@@ -18,6 +18,13 @@
 		5E4A2E8D228C58C300DFF211 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A2E8C228C58C300DFF211 /* EventService.swift */; };
 		5E4A2E90228C59F800DFF211 /* InsertEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A2E8E228C59F800DFF211 /* InsertEventViewController.swift */; };
 		5E4A2E91228C59F800DFF211 /* InsertEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E4A2E8F228C59F800DFF211 /* InsertEventViewController.xib */; };
+		5E9E6C6F22AE4BAB00B692B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6C6D22AE4BAB00B692B2 /* LoginViewController.swift */; };
+		5E9E6C7022AE4BAB00B692B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9E6C6E22AE4BAB00B692B2 /* LoginViewController.xib */; };
+		5E9E6C7522AE4BD300B692B2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6C7322AE4BD300B692B2 /* SignupViewController.swift */; };
+		5E9E6C7622AE4BD300B692B2 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9E6C7422AE4BD300B692B2 /* SignupViewController.xib */; };
+		5E9E6C7C22AE53E700B692B2 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6C7B22AE53E700B692B2 /* Toast.swift */; };
+		5E9E6C7E22AE59D900B692B2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6C7D22AE59D800B692B2 /* Session.swift */; };
+		5E9E6C8022AE5B9D00B692B2 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6C7F22AE5B9D00B692B2 /* SessionService.swift */; };
 		5EF9BB522265D5E100F256EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9BB512265D5E100F256EE /* AppDelegate.swift */; };
 		5EF9BB542265D5E100F256EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9BB532265D5E100F256EE /* ViewController.swift */; };
 		5EF9BB572265D5E100F256EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF9BB552265D5E100F256EE /* Main.storyboard */; };
@@ -28,7 +35,7 @@
 		9637131D229497DA00C48C3B /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9637131B229497DA00C48C3B /* EventDetailViewController.xib */; };
 		963713202294A36A00C48C3B /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9637131E2294A36A00C48C3B /* EventEditViewController.swift */; };
 		963713212294A36A00C48C3B /* EventEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9637131F2294A36A00C48C3B /* EventEditViewController.xib */; };
-		963713232295A1F000C48C3B /* ReportServie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963713222295A1F000C48C3B /* ReportServie.swift */; };
+		963713232295A1F000C48C3B /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963713222295A1F000C48C3B /* ReportService.swift */; };
 		963713362295BB1500C48C3B /* ReportUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963713342295BB1500C48C3B /* ReportUserTableViewCell.swift */; };
 		963713372295BB1500C48C3B /* ReportUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963713352295BB1500C48C3B /* ReportUserTableViewCell.xib */; };
 		963713392295C16400C48C3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963713382295C16400C48C3B /* User.swift */; };
@@ -56,6 +63,13 @@
 		5E4A2E8C228C58C300DFF211 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		5E4A2E8E228C59F800DFF211 /* InsertEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertEventViewController.swift; sourceTree = "<group>"; };
 		5E4A2E8F228C59F800DFF211 /* InsertEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertEventViewController.xib; sourceTree = "<group>"; };
+		5E9E6C6D22AE4BAB00B692B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5E9E6C6E22AE4BAB00B692B2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5E9E6C7322AE4BD300B692B2 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		5E9E6C7422AE4BD300B692B2 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		5E9E6C7B22AE53E700B692B2 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		5E9E6C7D22AE59D800B692B2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		5E9E6C7F22AE5B9D00B692B2 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		5EF9BB4E2265D5E100F256EE /* WhyNot-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WhyNot-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF9BB512265D5E100F256EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EF9BB532265D5E100F256EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +81,7 @@
 		9637131B229497DA00C48C3B /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		9637131E2294A36A00C48C3B /* EventEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		9637131F2294A36A00C48C3B /* EventEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventEditViewController.xib; sourceTree = "<group>"; };
-		963713222295A1F000C48C3B /* ReportServie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServie.swift; sourceTree = "<group>"; };
+		963713222295A1F000C48C3B /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		963713342295BB1500C48C3B /* ReportUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserTableViewCell.swift; sourceTree = "<group>"; };
 		963713352295BB1500C48C3B /* ReportUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportUserTableViewCell.xib; sourceTree = "<group>"; };
 		963713382295C16400C48C3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -140,6 +154,41 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		5E9E6C6C22AE4B9B00B692B2 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				5E9E6C7222AE4BC400B692B2 /* Signup */,
+				5E9E6C7122AE4BBC00B692B2 /* Login */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		5E9E6C7122AE4BBC00B692B2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5E9E6C6D22AE4BAB00B692B2 /* LoginViewController.swift */,
+				5E9E6C6E22AE4BAB00B692B2 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5E9E6C7222AE4BC400B692B2 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				5E9E6C7322AE4BD300B692B2 /* SignupViewController.swift */,
+				5E9E6C7422AE4BD300B692B2 /* SignupViewController.xib */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		5E9E6C7822AE539100B692B2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5E9E6C7B22AE53E700B692B2 /* Toast.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		5EF9BB452265D5E100F256EE = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +210,7 @@
 		5EF9BB502265D5E100F256EE /* WhyNot-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				5E9E6C7822AE539100B692B2 /* Tools */,
 				5EF9BB512265D5E100F256EE /* AppDelegate.swift */,
 				9674CF06226B190C00D59E63 /* Scenes */,
 				9674CF05226B190100D59E63 /* Services */,
@@ -198,6 +248,7 @@
 				5E4A2E76228C48E400DFF211 /* Event.swift */,
 				963713382295C16400C48C3B /* User.swift */,
 				96DAF11B229953E600CE3414 /* Report.swift */,
+				5E9E6C7D22AE59D800B692B2 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,7 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				5E4A2E8C228C58C300DFF211 /* EventService.swift */,
-				963713222295A1F000C48C3B /* ReportServie.swift */,
+				963713222295A1F000C48C3B /* ReportService.swift */,
+				5E9E6C7F22AE5B9D00B692B2 /* SessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -214,6 +266,7 @@
 		9674CF06226B190C00D59E63 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5E9E6C6C22AE4B9B00B692B2 /* Connection */,
 				963713242295B7AF00C48C3B /* Report */,
 				5E4A2E7C228C528E00DFF211 /* Home */,
 				5E4A2E71228C448000DFF211 /* Events */,
@@ -282,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E9E6C7022AE4BAB00B692B2 /* LoginViewController.xib in Resources */,
 				5E4A2E7B228C4C3A00DFF211 /* EventTableViewCell.xib in Resources */,
 				963713372295BB1500C48C3B /* ReportUserTableViewCell.xib in Resources */,
 				96DAF1162297067500CE3414 /* ReportUserListViewController.xib in Resources */,
@@ -291,6 +345,7 @@
 				5E4A2E88228C55EB00DFF211 /* Localizable.strings in Resources */,
 				5E4A2E91228C59F800DFF211 /* InsertEventViewController.xib in Resources */,
 				963713212294A36A00C48C3B /* EventEditViewController.xib in Resources */,
+				5E9E6C7622AE4BD300B692B2 /* SignupViewController.xib in Resources */,
 				9637131D229497DA00C48C3B /* EventDetailViewController.xib in Resources */,
 				5EF9BB592265D5E100F256EE /* Assets.xcassets in Resources */,
 				96DAF120229965AE00CE3414 /* ReportListViewController.xib in Resources */,
@@ -313,6 +368,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WhyNot-Swift/Pods-WhyNot-Swift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -320,6 +376,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,8 +415,11 @@
 			files = (
 				5E4A2E90228C59F800DFF211 /* InsertEventViewController.swift in Sources */,
 				96DAF1192299492900CE3414 /* UserViewController.swift in Sources */,
+				5E9E6C7522AE4BD300B692B2 /* SignupViewController.swift in Sources */,
+				5E9E6C8022AE5B9D00B692B2 /* SessionService.swift in Sources */,
 				963713362295BB1500C48C3B /* ReportUserTableViewCell.swift in Sources */,
 				96DAF11C229953E600CE3414 /* Report.swift in Sources */,
+				5E9E6C6F22AE4BAB00B692B2 /* LoginViewController.swift in Sources */,
 				963713202294A36A00C48C3B /* EventEditViewController.swift in Sources */,
 				5E4A2E77228C48E400DFF211 /* Event.swift in Sources */,
 				5EF9BB542265D5E100F256EE /* ViewController.swift in Sources */,
@@ -367,12 +427,14 @@
 				963713392295C16400C48C3B /* User.swift in Sources */,
 				96DAF1232299675E00CE3414 /* ReportTableViewCell.swift in Sources */,
 				9637131C229497DA00C48C3B /* EventDetailViewController.swift in Sources */,
+				5E9E6C7C22AE53E700B692B2 /* Toast.swift in Sources */,
 				5E4A2E74228C44D400DFF211 /* EventListViewController.swift in Sources */,
 				5E4A2E7A228C4C3A00DFF211 /* EventTableViewCell.swift in Sources */,
 				5EF9BB522265D5E100F256EE /* AppDelegate.swift in Sources */,
 				5E4A2E7F228C52B500DFF211 /* HomeViewController.swift in Sources */,
+				5E9E6C7E22AE59D900B692B2 /* Session.swift in Sources */,
 				96DAF11F229965AE00CE3414 /* ReportListViewController.swift in Sources */,
-				963713232295A1F000C48C3B /* ReportServie.swift in Sources */,
+				963713232295A1F000C48C3B /* ReportService.swift in Sources */,
 				5E4A2E8D228C58C300DFF211 /* EventService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
