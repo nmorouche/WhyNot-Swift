@@ -17,7 +17,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet var descriptionField: UITextView!
     var event: Event!
     
-    class func newInstance(event: Event) -> EventDetailViewController{
+    class func newInstance(event: Event) -> EventDetailViewController {
         let elvc = EventDetailViewController()
         elvc.event = event
         return elvc
