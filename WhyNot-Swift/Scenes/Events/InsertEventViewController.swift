@@ -20,11 +20,10 @@ class InsertEventViewController: UIViewController {
     @IBOutlet var addressTextField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var datePicker: UIDatePicker!
-    @IBOutlet var imageLabel: UILabel!
-    @IBOutlet var imageTextField: UITextField!
     @IBOutlet var subonlySwitch: UISwitch!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var priceTextField: UITextField!
+    @IBOutlet var imageView: UIImageView!
     var subonlyValue = false
     
     public class func newInstance() -> InsertEventViewController {
@@ -53,19 +52,19 @@ class InsertEventViewController: UIViewController {
         guard let name = titleTextField.text,
             let description = descriptionTextView.text,
             let address = addressTextField.text,
-            let image = imageTextField.text,
+            let image = imageView.image,
             let price = priceTextField.text else { return }
-        let params: [String:Any] = [
+        let params = [
             "name": name,
             "description": description,
             "date": dateFormat(date: datePicker.date),
             "address": address,
-            "imageURL": image,
-            "price": Int(price),
-            "sub_only": self.subonlyValue
+            "price": price,
+            "sub_only": String(subonlyValue)
         ]
-        EventService.default.insertEvent(params: params) { (result) in
+        EventService.default.insertEvent(params: params, image: image) { (result) in
             self.alertStatus()
+            print(result)
         }
     }
     
@@ -86,4 +85,26 @@ class InsertEventViewController: UIViewController {
         print(self.subonlyValue)
     }
     
+    @IBAction func selectImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image, animated: true)
+    }
+}
+
+extension InsertEventViewController: UINavigationControllerDelegate {
+    
+}
+
+extension InsertEventViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = image
+        } else {
+            print("ERROR IMAGE")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
 }
