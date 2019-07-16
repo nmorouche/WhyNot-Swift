@@ -19,11 +19,12 @@ public class ReportService {
     ]
     
     public func getUsers(completion: @escaping ([User]) -> Void) {
-        Alamofire.request("http://localhost:3000/report/", headers: headers).responseJSON { (res) in
+        Alamofire.request("https://whynot-api.herokuapp.com/report/", headers: headers).responseJSON { (res) in
             guard let user = res.value as? [String:Any],
             let user2 = user["users"] as? [[String:Any]] else {return}
             let users = user2.compactMap({ (elem) -> User? in
-                return User(json: elem)
+                let test = User(json: elem)
+                return test
             })
             
             completion(users)
@@ -31,7 +32,7 @@ public class ReportService {
     }
     
     public func getReports(id:String,completion: @escaping ([Report]) -> Void) {
-        Alamofire.request("http://localhost:3000/report/\(id)", headers: headers).responseJSON { (res) in
+        Alamofire.request("https://whynot-api.herokuapp.com/report/\(id)", headers: headers).responseJSON { (res) in
             
             
             guard let report = res.value as? [String:Any],
@@ -49,7 +50,7 @@ public class ReportService {
             "idReported" : id
         ]
         
-        Alamofire.request("http://localhost:3000/report/ban",method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { (res) in
+        Alamofire.request("https://whynot-api.herokuapp.com/report/ban",method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { (res) in
             
            
             

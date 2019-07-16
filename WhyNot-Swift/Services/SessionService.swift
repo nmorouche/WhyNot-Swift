@@ -13,7 +13,7 @@ public class SessionService {
     private let baseurl: String
     public static let `default` = SessionService()
     private init() {
-        self.baseurl = "http://localhost:3000/users/admin/"
+        self.baseurl = "https://whynot-api.herokuapp.com/users/admin/"
     }
     
     public func signup(params: [String:Any],completion: @escaping (String, Int) -> Void) {
@@ -35,6 +35,7 @@ public class SessionService {
             guard let session = res.value as? [String:Any],
                 let status = res.response?.statusCode else { return }
             if(status == 200) {
+                
                 guard let token = session["token"] as? String else { return }
                 completion(token, status)
             } else {

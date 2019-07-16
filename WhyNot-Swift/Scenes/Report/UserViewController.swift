@@ -28,7 +28,7 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         self.nameLabel.text = self.user.username
         self.birthdateLabel.text = self.user.birthdate
-        self.sexeLabel.text = self.user.sexe
+        self.sexeLabel.text = "\(self.user.gender)"
         self.bioTextField.text = self.user.bio
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(touchEdit))
         

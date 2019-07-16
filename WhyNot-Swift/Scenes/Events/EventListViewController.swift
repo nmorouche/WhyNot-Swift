@@ -32,8 +32,17 @@ class EventListViewController: UIViewController {
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchNewEvent))
         ]
         
+        func back(sender: UIBarButtonItem) {
+            // Perform your custom actions
+            // ...
+            // Go back to the previous ViewController
+            let push = HomeViewController.newInstance()
+            self.navigationController?.pushViewController(push, animated: true)
+        }
+        
         // Do any additional setup after loading the view.
     }
+    
     
     @objc func touchEdit() {
         UIView.animate(withDuration: 0.33) {

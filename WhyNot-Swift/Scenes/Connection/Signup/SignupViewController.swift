@@ -23,6 +23,9 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        submitButton.layer.cornerRadius = 0.5 * submitButton.bounds.size.width
+        submitButton.clipsToBounds = true
         setupLabels()
     }
     

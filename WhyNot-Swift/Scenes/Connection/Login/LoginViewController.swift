@@ -20,6 +20,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        loginButton.layer.cornerRadius = 0.5 * loginButton.bounds.size.width
+        loginButton.clipsToBounds = true
+        
+        signupButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        signupButton.layer.cornerRadius = 0.5 * signupButton.bounds.size.width
+        signupButton.clipsToBounds = true
         setupLabels()
     }
     

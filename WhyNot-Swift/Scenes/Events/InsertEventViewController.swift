@@ -72,7 +72,7 @@ class InsertEventViewController: UIViewController {
         let alert = UIAlertController(title: "Insertion réussi", message: "Votre évènement a bien été enregistré", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
             EventService.default.getEvents { (events) in
-                let push = EventListViewController.newInstance(events: events)
+                let push = HomeViewController.newInstance()
                 self.navigationController?.pushViewController(push, animated: true)
             }
         })

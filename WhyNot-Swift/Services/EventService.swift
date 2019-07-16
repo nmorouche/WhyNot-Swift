@@ -14,7 +14,7 @@ public class EventService {
     public static let `default` = EventService()
     private let baseurl: String
     private init(){
-        self.baseurl = "http://localhost:3000/events"
+        self.baseurl = "https://whynot-api.herokuapp.com/events"
     }
     let headers: HTTPHeaders = [
         "x-access-token": Session.default.token,
