@@ -58,6 +58,7 @@ public class EventService {
                 completion(statusCode)
             } else {
                 guard let error = code["error"] as? String else { return }
+                print(error)
                 completion(statusCode)
             }
         }

@@ -57,7 +57,6 @@ class EventEditViewController: UIViewController {
     
     @IBAction func onChangeSwitch(_ sender: Any) {
         self.subonlyValue = subonlySwitch.isOn ? true : false
-        print(self.subonlyValue)
     }
     
     @IBAction func editEvent(_ sender: Any) {
@@ -80,7 +79,7 @@ class EventEditViewController: UIViewController {
             "address": address,
             "date": dateFormat(date: datePicker.date),
             "imageURL": image,
-            "price": Int(price),
+            "price": Int(price) ?? 0,
             "sub_only": subonly
         ]
         print(params)

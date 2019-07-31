@@ -8,6 +8,4 @@ target 'WhyNot-Swift' do
   # Pods for SampleWebAPI
   pod 'Alamofire'
   pod 'NVActivityIndicatorView'
-  pod 'IQKeyboardManagerSwift'
-
 end
